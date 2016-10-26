@@ -1,0 +1,20 @@
+<project name="jneat" default="jar" basedir=".">
+  <property name="src" value="."/>
+ 
+  <target name="compile">
+    <javac srcdir="${src}"/>
+  </target>
+ 
+  <target name="compile-debug">
+    <javac debug="on" srcdir="${src}"/>
+  </target>
+ 
+  <target name="jar" depends="compile">
+    <jar jarfile="jneat.jar" basedir="${src}">
+       <include name="gui/*.class"/>
+       <include name="jneat/*.class"/>
+       <include name="jNeatCommon/*.class"/>
+       <include name="log/*.class"/>
+    </jar>
+  </target>
+</project>
